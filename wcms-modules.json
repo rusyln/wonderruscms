@@ -4,7 +4,7 @@
         "sky": {
             "name": "RUS",
             "repo": "http://github.com/rusyln/wonderruscms/tree/master",
-            "zip": "https://github.com/rusyln/wonderruscms/archive/master.zip",
+            "zip": "https://github.com/rusyln/wonderruscms/archive/refs/heads/master.zip",
             "summary": "Default WonderCMS theme (2022). Theme works without Bootstrap and jQuery.",
             "version": "3.5.0",
             "image": "https://raw.githubusercontent.com/robiso/sky/master/preview.jpg"
