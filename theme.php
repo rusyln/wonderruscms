@@ -1,14 +1,14 @@
 <?php global $Wcms ?>
 
 <!DOCTYPE html>
-<html lang="<?= $Wcms->getSiteLanguage() ?>">
+<html lang="<?= $Wcms->getSiteLanguage() ?>" class="scroll-smooth">
 <head>
   <!-- Encoding, browser compatibility, viewport -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- SEO: use WonderCMS data -->
+  <!-- SEO: WonderCMS data -->
   <meta name="title" content="<?= $Wcms->get('config', 'siteTitle') ?> - <?= $Wcms->page('title') ?>" />
   <meta name="description" content="<?= $Wcms->page('description') ?>">
   <meta name="keywords" content="<?= $Wcms->page('keywords') ?>">
@@ -25,9 +25,6 @@
 
   <!-- Admin CSS -->
   <?= $Wcms->css() ?>
-
-  <!-- Existing theme CSS (optional, keep for compatibility) -->
-  <link rel="stylesheet" rel="preload" as="style" href="<?= $Wcms->asset('css/style.css') ?>">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -82,8 +79,13 @@
     </div>
   </header>
 
+  <!-- Main WonderCMS page content (recommended placement) -->
+  <main class="max-w-4xl mx-auto px-6 pt-28 pb-12">
+    <?= $Wcms->page('content') ?>
+  </main>
+
   <!-- Hero -->
-  <header class="min-h-screen flex items-center justify-center relative overflow-hidden pt-24">
+  <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-green-900/20 via-transparent to-purple-900/10"></div>
     <div class="relative text-center px-6 z-10">
       <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight">
@@ -104,7 +106,7 @@
         </a>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- Projects -->
   <section id="projects" class="py-24 px-6">
@@ -112,11 +114,6 @@
       <h2 class="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-white to-green-400 bg-clip-text text-transparent">
         Featured Projects
       </h2>
-
-      <!-- Optional CMS content above projects -->
-      <div class="max-w-3xl mx-auto mb-12 prose prose-invert">
-        <?= $Wcms->page('content') ?>
-      </div>
 
       <!-- CMS: Add button (visible only when admin mode) -->
       <div x-show="isAdmin" class="text-center mb-10">
@@ -157,7 +154,7 @@
   </section>
 
   <!-- About -->
-  <section class="py-24 px-6 bg-slate-900/30">
+  <section id="about" class="py-24 px-6 bg-slate-900/30">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-5xl font-bold mb-10 bg-gradient-to-r from-white to-green-400 bg-clip-text text-transparent">About</h2>
       <p class="text-xl leading-relaxed text-gray-300">
@@ -166,7 +163,7 @@
       </p>
 
       <!-- Static editable block, same on each page -->
-      <div class="mt-12 text-sm text-gray-400">
+      <div class="mt-10 text-sm text-gray-400">
         <?= $Wcms->block('subside') ?>
       </div>
 
