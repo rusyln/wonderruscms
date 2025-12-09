@@ -6,7 +6,7 @@
             "repo": "http://github.com/rusyln/wonderruscms/tree/master",
             "zip": "https://github.com/rusyln/wonderruscms/archive/refs/heads/master.zip",
             "summary": "Default WonderCMS theme (2022). Theme works without Bootstrap and jQuery.",
-            "version": "3.5.0",
+            "version": "3.5.1",
             "image": "https://raw.githubusercontent.com/robiso/sky/master/preview.jpg"
         }
     }
